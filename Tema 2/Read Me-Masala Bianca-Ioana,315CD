@@ -1,0 +1,25 @@
+Masala Bianca-Ioana, 315CD
+
+
+Task 1-Implementare C Arbori de Intervale
+
+Pentru a rezolva acest task am urmat pseudocodul dat in enuntul temei.
+
+1.Creare arbore
+	Pentru a implementa aceasta cerinta am luat o noua functie, pentru a crea un nod al arborelui unde am scris psudocodul dat si am facut alocarile necesare. Aceasta functie am apelat-o ulterior in functia ArboreDeIntervale *construieste_arbore, unde am si initializat corespunzator campurile unui arbore de intervale.
+
+2.Actualizarea unui interval
+	La aceasta functie am luat doua variabile a si b, pentru capatul din stanga, respectiv dreapta, iar apoi am aplicat pseudocodul.
+
+3.Interogarea unui interval
+	Asemanator functiei anterioare am luat doua variabile pentru capete, una pentru mijloc si inca doua valori una pentru cea din stanga si una pentru cea din dreapta pe care le-am initializat cu 0. Dupa am urmat la fel pseudocodul avut in enuntul temei.
+
+
+Task 2-Intersectii de intervale
+
+Varianta cu arbori de intervale:
+	La acest task am luat o dreapta verticala imaginara cu care m-am plimbat de-a lungul segmentelor de la stanga la dreapta, pentru a vedea cand se intersecteaza cu segmentele date.
+	Am luat o structura Event si pentru fiecare x am retinut de ce tip e.Daca incepe segment din el(tip 0), daca e segment vertical(tip 1) si daca se termina un segment in el(tip 2).Am baleiat segmentele, am calculat y-ul maxim si daca segmentul e vertical, am y1 diferit de y2, in caz contrar y1 e la fel cu y2.Am folosit qsort pentru a sorta toate evenimentele dupa x.Pentru aceasta m-am folosit de o functie cmp care sa-i spuna cum sa sorteze structura.M-am folosit de primul task pentru a construi arborele, am parcurs lista sortata.Pe intervalul [y1,y2], stiu cate segmente orizontale trec in momentul respectiv prin segmentul vertical. Apoi daca x-ul e de tip 0, actualizez y-ul adunand 1, iar daca dau de un x care incheie un segment actulizez y-ul adunand -1.
+
+Varianta triviala:
+	La aceasta solutie am verificat asa cum spune fiecare segment daca se intersecteaza cu fiecare segment. Iau un segment orizontal (x1 != x2)  si dupa caut unul vertical, iar intr-un if verific daca segmentul vertical il taie pe cel orizontal.Adica daca x-urile segmentului orizontal sunt de o parte si de alta a x-ului segmentului vertical si daca y-ul segmentului orizontal e intre y-urile segmentului vertical.
